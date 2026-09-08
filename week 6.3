@@ -1,0 +1,29 @@
+import java.io.*;
+
+class Result {
+
+    public static int marsExploration(String s) {
+        String pattern = "SOS";
+        int changes = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != pattern.charAt(i % 3)) {
+                changes++;
+            }
+        }
+
+        return changes;
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(
+            new InputStreamReader(System.in)
+        );
+
+        String s = br.readLine();
+
+        System.out.println(Result.marsExploration(s));
+    }
+}
